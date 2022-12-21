@@ -13,8 +13,9 @@ module ResourceBookingQueryPatch
       custom_field = CustomField.find_by_id(TEAM_CUSTOM_FIELD_ID)
       if custom_field.blank?
         custom_field = CustomField.where(type: "ProjectCustomField", name: "Team").first
-        return ['viki','esakki'] unless custom_field.present? 
+        return [] unless custom_field.present? 
       end
+      return custom_field.enumerations.pluck(:name, :id) if custom_field.field_format == 'enumeration'
       custom_field.possible_values
     end
 
