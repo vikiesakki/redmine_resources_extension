@@ -1,7 +1,7 @@
 require 'redmine'
 $LOAD_PATH.unshift "#{File.dirname(__FILE__)}/lib/"
 require 'resource_booking_query_patch'
-TEAM_CUSTOM_FIELD_ID = 16
+TEAM_CUSTOM_FIELD_ID = 17
 Redmine::Plugin.register :redmine_resources_extension do
   name 'Redmine Resources Extension plugin'
   author 'Vignesh EsakkiMuthu'
